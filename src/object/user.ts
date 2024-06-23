@@ -50,6 +50,10 @@ export default class User extends Base {
         return this.getEntry<number>('identifyNum');
     }
 
+    public async fullname() {
+        return `${await this.username()}#${await this.identifyNum()}`;
+    }
+
     /**
      * Get user identify number
      * @alias identifyNum
