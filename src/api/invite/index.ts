@@ -1,4 +1,4 @@
-import { MultiPageResponse, RequestResponse } from "@ksm/type";
+import { MultiPageResponse, RequestResponse } from "@ksm/type/index";
 import Rest from "@ksm/requestor";
 import { RawInviteCreateResponse, RawInviteListResponseItem } from "./type";
 

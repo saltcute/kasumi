@@ -1,9 +1,9 @@
 import Rest from "@ksm/requestor";
-import { MessageType, Message as MessageInterface, RequestResponse, User } from "@ksm/type";
+import { MessageType, Message as MessageInterface, RequestResponse, User } from "@ksm/type/index";
 import { v4 as uuidv4 } from 'uuid';
-import { NonceDismatchError } from "@ksm/error";
+import { NonceDismatchError } from "@ksm/type/error";
 import { RawListResponse } from "./type";
-import { Card } from "@ksm/card";
+import { Card } from "@ksm/object/card";
 import UserChat from "./chat";
 
 export default class DirectMessage {

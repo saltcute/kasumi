@@ -1,4 +1,4 @@
-import { MultiPageResponse, Emoji } from "@ksm/type";
+import { MultiPageResponse, Emoji } from "@ksm/type/index";
 import Rest from "@ksm/requestor";
 import FormData from "form-data";
 

@@ -1,7 +1,7 @@
 import Logger from "bunyan";
 import { PlainTextMessageEvent, MarkdownMessageEvent, ButtonClickedEvent } from "@ksm/message/type"
 import Kasumi from "@ksm/client";
-import { CommandNameNotPresentErorr, MethodNotImplementedError } from "@ksm/error";
+import { CommandNameNotPresentErorr, MethodNotImplementedError } from "@ksm/type/error";
 import { BaseSession } from "@ksm/plugin/session";
 import { KasumiMiddleware } from "@ksm/plugin/middlewares/type";
 import { Plugin } from "../plugin";

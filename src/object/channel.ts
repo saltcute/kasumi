@@ -1,5 +1,5 @@
 import Kasumi from '@ksm/client';
-import { ChannelType } from '@ksm/type';
+import { ChannelType } from '@ksm/type/index';
 import Base from './base';
 import User from './user';
 

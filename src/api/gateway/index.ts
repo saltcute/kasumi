@@ -1,6 +1,6 @@
 import Rest from "@ksm/requestor";
 import { RawGatewayResponse } from "./type";
-import { RequestResponse } from '@ksm/type';
+import { RequestResponse } from '@ksm/type/index';
 
 export default class Gateway {
     private rest: Rest;

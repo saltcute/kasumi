@@ -1,6 +1,6 @@
 import axios, { AxiosError, AxiosInstance, AxiosRequestConfig } from "axios";
-import { MultiPageResponse, RawResponse, RequestResponse } from "@ksm/type";
-import { RestError } from "@ksm/error";
+import { MultiPageResponse, RawResponse, RequestResponse } from "@ksm/type/index";
+import { RestError } from "@ksm/type/error";
 import Logger from "bunyan";
 
 export default class Rest {

@@ -1,4 +1,4 @@
-import { UserStatus } from "@ksm/type";
+import { UserStatus } from "@ksm/type/index";
 import Base from "./base";
 import Kasumi from "@ksm/client";
 

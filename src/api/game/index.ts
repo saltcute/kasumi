@@ -1,4 +1,4 @@
-import { MultiPageResponse, RequestResponse, Game as GameType } from "@ksm/type";
+import { MultiPageResponse, RequestResponse, Game as GameType } from "@ksm/type/index";
 import Rest from "@ksm/requestor";
 
 export default class Game {

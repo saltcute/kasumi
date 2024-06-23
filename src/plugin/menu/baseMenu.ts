@@ -1,7 +1,7 @@
 import { BaseCommand } from "./baseCommand";
 import Kasumi from "@ksm/client";
 import { BaseSession } from "@ksm/plugin/session";
-import { MethodNotAllowedError, UnknownInputTypeError } from "@ksm/error";
+import { MethodNotAllowedError, UnknownInputTypeError } from "@ksm/type/error";
 
 export class BaseMenu extends BaseCommand<Kasumi<any>> {
     readonly type: 'plugin' | 'menu' = 'menu';

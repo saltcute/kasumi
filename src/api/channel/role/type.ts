@@ -1,4 +1,4 @@
-import { User } from "@ksm/type";
+import { User } from "@ksm/type/index";
 
 export interface RawChannelRoleIndexResponse {
     permission_overwrites: {

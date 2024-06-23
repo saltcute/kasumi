@@ -1,8 +1,8 @@
 import ws from 'ws';
 import Logger from 'bunyan';
-import { WebSocket as WebSocketType } from '@ksm/type'
+import { WebSocket as WebSocketType } from '@ksm/type/index'
 import delay from 'delay';
-import { TimeoutError } from '@ksm/error';
+import { TimeoutError } from '@ksm/type/error';
 import Kasumi from '@ksm/client';
 
 export default class WebSocket {

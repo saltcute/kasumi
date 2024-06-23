@@ -1,4 +1,4 @@
-import { MultiPageResponse } from "@ksm/type";
+import { MultiPageResponse } from "@ksm/type/index";
 import Rest from "@ksm/requestor";
 import { BriefChatSession, FullChatSession } from "./type";
 

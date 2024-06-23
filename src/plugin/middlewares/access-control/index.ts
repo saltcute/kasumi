@@ -1,5 +1,5 @@
 import Kasumi from '@ksm/client';
-import { BreifUser } from "@ksm/type";
+import { BreifUser } from "@ksm/type/index";
 import { KasumiMiddleware } from '@ksm/plugin/middlewares/type';
 import { BaseCommand } from '@ksm/plugin/menu/baseCommand';
 

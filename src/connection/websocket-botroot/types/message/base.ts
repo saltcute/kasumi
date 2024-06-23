@@ -1,4 +1,4 @@
-import { MessageType } from '@ksm/websocket-botroot/types/MessageType'
+import { MessageType } from '@ksm/connection/websocket-botroot/types/MessageType'
 
 export interface MessageBase {
   type: MessageType

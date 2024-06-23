@@ -1,4 +1,4 @@
-import { FullChannel, RequestResponse, User } from "@ksm/type";
+import { FullChannel, RequestResponse, User } from "@ksm/type/index";
 import Rest from "@ksm/requestor";
 import { RawChannelListResponse } from "./type";
 import ChannelUser from "./user";

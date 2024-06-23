@@ -1,4 +1,4 @@
-import { Guild, MultiPageResponse, NotificationSetting, Role, User } from "@ksm/type";
+import { Guild, MultiPageResponse, NotificationSetting, Role, User } from "@ksm/type/index";
 
 
 export interface RawListResponse {

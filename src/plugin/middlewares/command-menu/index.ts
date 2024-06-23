@@ -1,4 +1,4 @@
-import { Card } from "@ksm/card";
+import { Card } from "@ksm/object/card";
 import { Plugin, BaseCommand, BaseSession, BaseMenu } from "@ksm/plugin";
 
 export class CommandMenu {

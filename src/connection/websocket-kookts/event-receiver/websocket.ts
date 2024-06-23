@@ -1,7 +1,7 @@
 import { Atom, addChangeHandler, deref, swap } from '@libre/atom';
-import { RequestResponse } from '@ksm/type';
+import { RequestResponse } from '@ksm/type/index';
 import WebSocket from 'ws';
-import { BaseClient } from '@ksm/websocket-kookts/base';
+import { BaseClient } from '@ksm/connection/websocket-kookts/base';
 import { BaseReceiver } from './base';
 import {
     TimeoutKey,

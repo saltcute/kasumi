@@ -1,4 +1,4 @@
-import { User } from "@ksm/type";
+import { User } from "@ksm/type/index";
 
 export interface RawBlacklistListResponseItem {
     user_id: string,

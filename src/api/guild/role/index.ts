@@ -1,4 +1,4 @@
-import { RawMention, MultiPageResponse } from "@ksm/type";
+import { RawMention, MultiPageResponse } from "@ksm/type/index";
 import Rest from "@ksm/requestor";
 import { RawGuildRoleManipulateResponse } from "./type";
 

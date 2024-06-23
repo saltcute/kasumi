@@ -1,5 +1,5 @@
 import Kasumi from "@ksm/client";
-import { MessageType } from "@ksm/type";
+import { MessageType } from "@ksm/type/index";
 import Base from "./base";
 import User from "./user";
 

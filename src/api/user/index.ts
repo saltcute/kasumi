@@ -1,4 +1,4 @@
-import { RequestResponse } from "@ksm/type";
+import { RequestResponse } from "@ksm/type/index";
 import Rest from "@ksm/requestor";
 import { RawUserMeResponse, RawUserViewResponse } from "./type";
 

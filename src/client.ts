@@ -1,20 +1,20 @@
 import Logger from "bunyan";
 
 import API from "@ksm/api";
-import { RawEmisions } from '@ksm/events/type';
-import { KasumiConfig } from "@ksm/type";
-import { Event } from '@ksm/events';
+import { RawEmisions } from '@ksm/type/events/type';
+import { KasumiConfig } from "@ksm/type/index";
+import { Event } from '@ksm/type/events';
 import { Message } from "@ksm/message";
-import WebSocket from "@ksm/websocket";
+import WebSocket from "@ksm/connection/websocket";
 import { Config } from "@ksm/config";
-import WebHook from "@ksm/webhook";
+import WebHook from "@ksm/connection/webhook";
 import { Plugin } from "@ksm/plugin/plugin"
-import WebSocketSource from "@ksm/websocket-botroot";
-import { BaseReceiver, WebsocketReceiver } from "@ksm/websocket-kookts/event-receiver";
-import { BaseClient } from "@ksm/websocket-kookts";
+import WebSocketSource from "@ksm/connection/websocket-botroot";
+import { BaseReceiver, WebsocketReceiver } from "@ksm/connection/websocket-kookts/event-receiver";
+import { BaseClient } from "@ksm/connection/websocket-kookts";
 
 import EventEmitter2 from "eventemitter2";
-import { TokenNotProvidedError, UnknownConnectionType } from "@ksm/error";
+import { TokenNotProvidedError, UnknownConnectionType } from "@ksm/type/error";
 import { MongoDB } from "@ksm/config/database/mongodb";
 import * as Middlewares from "@ksm/plugin/middlewares";
 
