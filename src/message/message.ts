@@ -29,7 +29,7 @@ export class Message extends EventEmitter2 implements Message {
     }
     recievedMessage(e: WebSocket.Signal.Event) {
         const data = e.d;
-        if (data.author_id == this.client.me.userId) return;
+        if (data.author_id == this.client.me.id()) return;
         let event;
         switch (data.type) {
             case MessageType.SystemMessage: {

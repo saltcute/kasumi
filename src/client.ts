@@ -17,6 +17,7 @@ import EventEmitter2 from "eventemitter2";
 import { TokenNotProvidedError, UnknownConnectionType } from "@ksm/type/error";
 import { MongoDB } from "@ksm/config/database/mongodb";
 import * as Middlewares from "@ksm/plugin/middlewares";
+import User from "@ksm/object/user";
 
 export interface Kasumi<CustomStorage extends {}> extends EventEmitter2 {
     on<T extends keyof RawEmisions>(event: T, listener: RawEmisions[T]): this;
@@ -38,17 +39,7 @@ export class Kasumi<CustomStorage extends {} = {}> extends EventEmitter2 impleme
     /**
      * Profile of the current bot
      */
-    me: {
-        userId: string,
-        username: string,
-        identifyNum: string,
-        avatar: string
-    } = {
-            userId: '',
-            username: '',
-            identifyNum: '',
-            avatar: ''
-        }
+    me!: User;
 
     readonly TOKEN: string;
     readonly BUNYAN_LOG_LEVEL: Logger.LogLevel;
@@ -156,12 +147,8 @@ export class Kasumi<CustomStorage extends {} = {}> extends EventEmitter2 impleme
             }, 30 * 1000);
             return false;
         }
-        let profile = data;
-        this.me.userId = profile.id;
-        this.me.username = profile.username;
-        this.me.identifyNum = profile.identify_num;
-        this.me.avatar = profile.avatar;
-        this.logger.info(`Logged in as ${this.me.username}#${this.me.identifyNum} (${this.me.userId})`);
+        this.me = await User.build(this, data.id);
+        this.logger.info(`Logged in as ${this.me.fullname()} (${this.me.id()})`);
         return true;
     }
     async connect() {
