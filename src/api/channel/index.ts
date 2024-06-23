@@ -130,15 +130,26 @@ export default class Channel {
      */
     async update(
         channelId: string,
-        name?: string,
-        topic?: string,
-        slowMode?: 0 | 5000 | 10000 | 15000 | 30000 | 60000 | 120000 | 300000 | 600000 | 900000 | 1800000 | 3600000 | 7200000 | 21600000
+        { name, level, parentCategoryId, topic, slowMode, maxUsers, voiceQuality, password }: {
+            name?: string,
+            level?: number,
+            parentCategoryId?: string,
+            topic?: string,
+            slowMode?: 0 | 5000 | 10000 | 15000 | 30000 | 60000 | 120000 | 300000 | 600000 | 900000 | 1800000 | 3600000 | 7200000 | 21600000,
+            maxUsers?: number,
+            voiceQuality?: 'LQ' | 'NM' | 'HQ',
+            password?: string
+        }
     ): Promise<RequestResponse<FullChannel>> {
         return this.rest.post('/channel/update', {
             channel_id: channelId,
-            name,
+            name, level,
+            parent_id: parentCategoryId,
             topic,
-            slow_mode: slowMode
+            slow_mode: slowMode,
+            limit_amount: maxUsers,
+            voice_quality: voiceQuality ? this.__voice_quality_map[voiceQuality] : undefined,
+            password
         })
     }
 
