@@ -78,7 +78,7 @@ class UserMessageEvent extends BaseMessageEvent {
         return object.channel_type == 'GROUP';
     }
     public async delete() {
-        this.client.API.message.delete(this.messageId);
+        return this.client.API.message.delete(this.messageId);
     }
     public async reply(content: string, tempUpdateTargetUser?: string) {
         if (this.channelType == 'GROUP') return this.client.API.message.create(this.messageType, this.channelId, content, this.messageId, tempUpdateTargetUser);
