@@ -32,6 +32,7 @@ export type NormalMessageType = Exclude<MessageType,
 export type GuildType = 'GROUP' | 'PERSON' | 'BROADCAST';
 
 export enum ChannelType {
+    Category = 0,
     TextChannel = 1,
     VoiceChannel = 2
 }
@@ -79,15 +80,16 @@ export interface Message {
     create_at: number,
     update_at: number,
     reactions: Array<RawReaction>,
-    author: {
-        id: string,
-        username: string,
-        online: boolean,
-        avatar: string
-    },
+    author: User,
     image_name: string,
     read_status: boolean,
-    quote: null,
+    quote: null | {
+        id: string,
+        type: MessageType,
+        content: string,
+        create_at: number,
+        author: User
+    },
     mention_info: {
         mention_part: Array<RawMention.User>,
         mention_role_part: Array<RawMention.Role>
