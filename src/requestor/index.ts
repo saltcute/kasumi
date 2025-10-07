@@ -143,6 +143,7 @@ export default class Rest {
             res = await this.get(endpoint, {
                 page: currentPage,
                 page_size: pageSize,
+                ...params,
             });
             yield res;
             let { err, data } = res;
