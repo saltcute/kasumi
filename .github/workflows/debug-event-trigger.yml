@@ -1,0 +1,20 @@
+# .github/workflows/debug-release-trigger.yml
+name: Debug release trigger
+
+on:
+    release:
+        types: [created, edited, published, prereleased, unpublished, deleted]
+
+jobs:
+    show-event:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Print basic info
+              run: |
+                  echo "Action: ${{ github.event.action }}"
+                  echo "Tag:    ${{ github.event.release.tag_name }}"
+                  echo "Draft:  ${{ github.event.release.draft }}"
+                  echo "PreRel: ${{ github.event.release.prerelease }}"
+            - name: Dump full event JSON
+              run: |
+                  echo '${{ toJson(github.event) }}'
