@@ -13,6 +13,8 @@ import Blacklist from "./blacklist";
 import Intimacy from "./intimacy";
 import Inivte from "./invite";
 import Voice from "./voice";
+import Category from "./category";
+import Thread from "./thread";
 
 export default class API {
     rest: Rest;
@@ -20,6 +22,7 @@ export default class API {
     asset: Asset;
     badge: Badge;
     blacklist: Blacklist;
+    category: Category;
     channel: Channel;
     directMessage: DirectMessage;
     game: Game;
@@ -28,6 +31,7 @@ export default class API {
     intimacy: Intimacy;
     invite: Inivte;
     message: Message;
+    thread: Thread;
     user: User;
     voice: Voice;
     constructor(token: string, logger: Logger, customEndpoint?: string) {
@@ -36,6 +40,7 @@ export default class API {
         this.asset = new Asset(this.rest);
         this.badge = new Badge(this.rest);
         this.blacklist = new Blacklist(this.rest);
+        this.category = new Category(this.rest);
         this.channel = new Channel(this.rest);
         this.directMessage = new DirectMessage(this.rest);
         this.game = new Game(this.rest);
@@ -44,6 +49,7 @@ export default class API {
         this.intimacy = new Intimacy(this.rest);
         this.invite = new Inivte(this.rest);
         this.message = new Message(this.rest);
+        this.thread = new Thread(this.rest);
         this.user = new User(this.rest);
         this.voice = new Voice(this.rest);
     }
