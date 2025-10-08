@@ -1,0 +1,10 @@
+# .github/workflows/smoke.yml
+name: Actions smoke test
+on:
+    push:
+    workflow_dispatch:
+jobs:
+    ping:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "Actions are running ✅"
