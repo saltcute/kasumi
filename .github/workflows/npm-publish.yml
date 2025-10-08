@@ -5,7 +5,10 @@ name: Relase NPM Package
 
 on:
     release:
-        types: [published]
+        types: [published] # fires on Release publish
+    push:
+        tags:
+            - "v*" # also fire when you push tags like v1.2.3
 
 permissions:
     contents: read
