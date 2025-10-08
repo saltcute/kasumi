@@ -1,68 +1,69 @@
 {
-  "name": "kasumi.js",
-  "version": "0.6.10",
-  "description": "KOOK TypeScript SDK",
-  "main": "dist/index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/HexaNona/kasumi.git"
-  },
-  "keywords": [
-    "kook",
-    "kaiheila",
-    "chatbot",
-    "typescript"
-  ],
-  "scripts": {
-    "build": "tsc && tsconfig-replace-paths -p tsconfig.json -s ./src -o ./dist",
-    "clean": "rimraf dist/*",
-    "make": "npm run clean && npm run lint && npm run build",
-    "lint": "prettier './src/**/*.ts' --write"
-  },
-  "exports": {
-    "require": "./dist/index.js",
-    "import": "./esm/esm_export.mjs",
-    "default": "./dist/index.js"
-  },
-  "author": "Hexona",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/HexaNona/kasumi/issues"
-  },
-  "homepage": "https://github.com/HexaNona/kasumi#readme",
-  "dependencies": {
-    "@libre/atom": "^1.3.3",
-    "axios": "^1.3.2",
-    "body-parser": "^1.20.1",
-    "bunyan": "^1.8.15",
-    "delay": "^5.0.0",
-    "dotenv": "^16.0.3",
-    "dotenv-expand": "^10.0.0",
-    "eventemitter2": "^6.4.9",
-    "express": "^4.18.2",
-    "form-data": "^4.0.0",
-    "get-port": "^7.0.0",
-    "json5": "^2.2.3",
-    "lodash": "^4.17.21",
-    "mongodb": "^6.3.0",
-    "object-hash": "^3.0.0",
-    "type-fest": "^3.7.2",
-    "type-plus": "^7.6.0",
-    "typescript": "^5.3.2",
-    "unionize": "^3.1.0",
-    "upath": "^2.0.1",
-    "uuid": "^9.0.0",
-    "ws": "^8.12.0"
-  },
-  "devDependencies": {
-    "@types/bunyan": "^1.8.8",
-    "@types/express": "^4.17.17",
-    "@types/lodash": "^4.14.191",
-    "@types/object-hash": "^3.0.6",
-    "@types/uuid": "^9.0.0",
-    "@types/ws": "^8.5.4",
-    "rimraf": "^6.0.1",
-    "prettier": "^3.3.2",
-    "tsconfig-replace-paths": "^0.0.14"
-  }
+    "name": "kasumi.js",
+    "version": "0.6.11",
+    "description": "KOOK TypeScript SDK",
+    "main": "dist/index.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/HexaNona/kasumi.git"
+    },
+    "keywords": [
+        "kook",
+        "kaiheila",
+        "chatbot",
+        "typescript"
+    ],
+    "scripts": {
+        "build": "tsc && tsconfig-replace-paths -p tsconfig.json -s ./src -o ./dist",
+        "clean": "rimraf dist/*",
+        "make": "npm run clean && npm run lint && npm run build",
+        "lint": "prettier './src/**/*.ts' --write",
+        "test": "npm run make && node ./test/index.js"
+    },
+    "exports": {
+        "require": "./dist/index.js",
+        "import": "./esm/esm_export.mjs",
+        "default": "./dist/index.js"
+    },
+    "author": "Hexona",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/HexaNona/kasumi/issues"
+    },
+    "homepage": "https://github.com/HexaNona/kasumi#readme",
+    "dependencies": {
+        "@libre/atom": "^1.3.3",
+        "axios": "^1.3.2",
+        "body-parser": "^1.20.1",
+        "bunyan": "^1.8.15",
+        "delay": "^5.0.0",
+        "dotenv": "^16.0.3",
+        "dotenv-expand": "^10.0.0",
+        "eventemitter2": "^6.4.9",
+        "express": "^4.18.2",
+        "form-data": "^4.0.0",
+        "get-port": "^7.0.0",
+        "json5": "^2.2.3",
+        "lodash": "^4.17.21",
+        "mongodb": "^6.3.0",
+        "object-hash": "^3.0.0",
+        "type-fest": "^3.7.2",
+        "type-plus": "^7.6.0",
+        "typescript": "^5.3.2",
+        "unionize": "^3.1.0",
+        "upath": "^2.0.1",
+        "uuid": "^9.0.0",
+        "ws": "^8.12.0"
+    },
+    "devDependencies": {
+        "@types/bunyan": "^1.8.8",
+        "@types/express": "^4.17.17",
+        "@types/lodash": "^4.14.191",
+        "@types/object-hash": "^3.0.6",
+        "@types/uuid": "^9.0.0",
+        "@types/ws": "^8.5.4",
+        "prettier": "^3.3.2",
+        "rimraf": "^6.0.1",
+        "tsconfig-replace-paths": "^0.0.14"
+    }
 }
