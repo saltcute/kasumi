@@ -9,7 +9,7 @@ export default class Blacklist {
     }
 
     /**
-     * Get a list of blacklisted useres
+     * Get a list of blacklisted users
      * @param guildId Guild ID
      * @param page Page number
      * @param pageSize Page size

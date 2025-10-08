@@ -51,6 +51,12 @@ export enum NotificationSetting {
     Block = 3,
 }
 
+export enum ThreadStatus {
+    UNDER_REVIEW = 1,
+    APPROVED = 2,
+    EDIT_UNDER_REVIEW = 3,
+}
+
 export interface BreifUser {
     id: string;
     username: string;
@@ -190,6 +196,64 @@ export interface FullChannel extends BriefChannel {
         deny: number;
     }[];
     permission_sync: 0 | 1;
+}
+
+export interface BreifThread {
+    id: string;
+    status: ThreadStatus;
+    title: string;
+    cover: string;
+    post_id: string;
+    medias: ThreadMedia[];
+    preview_content: string;
+    user: User;
+    category: ThreadCategory;
+    tags: ThreadTag[];
+}
+
+export interface Thread extends BreifThread {
+    content: string;
+    mention: any[];
+    mention_all: boolean;
+    mention_here: boolean;
+    mention_part: Array<RawMention.User>;
+    mention_role_part: Array<RawMention.Role>;
+    channel_part: any[];
+    item_part: any[];
+}
+
+export interface ThreadCategory {
+    id: string;
+    name: string;
+    allow: number;
+    deny: number;
+}
+
+export interface ThreadTag {
+    id: string;
+    name: string;
+    icon: string;
+}
+
+export interface ThreadMedia {
+    type: number;
+    src: string;
+    title: string;
+}
+
+export interface Post {
+    id: string;
+    reply_id: string;
+    thread_id: string;
+    is_updated: boolean;
+    content: string;
+    mention: any[];
+    mention_all: boolean;
+    mention_here: boolean;
+    mention_part: Array<RawMention.User>;
+    mention_role_part: Array<RawMention.Role>;
+    channel_part: any[];
+    item_part: any[];
 }
 
 export interface Quote {
@@ -582,10 +646,9 @@ interface BaseConfig {
     customEnpoint?: string;
     disableSnOrderCheck?: boolean;
 }
-
 export interface WebSocketConfig extends BaseConfig {
     type: "websocket";
-    vendor?: "botroot" | "hexona" | "kookts";
+    vendor?: "kasumi" | "builtin" | "salt" | "hexona" | "botroot" | "kookts";
     disableSnOrderCheck?: boolean;
 }
 

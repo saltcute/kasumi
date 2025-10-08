@@ -30,7 +30,17 @@ export class Card {
     public set modules(modules: Modules[]) {
         this.modules = modules;
     }
-    constructor(card?: Partial<CardType>) {
+    constructor(card?: string | Partial<CardType> | Array<Partial<CardType>>) {
+        if (typeof card == "string") {
+            try {
+                card = JSON.parse(card);
+            } catch {}
+            if (typeof card == "string") card = undefined;
+        }
+        if (card instanceof Array) {
+            if (card.length > 0) card = card[0];
+            else card = undefined;
+        }
         if (card?.theme) {
             this.setTheme(card.theme);
         }
